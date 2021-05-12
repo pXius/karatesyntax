@@ -1,0 +1,47 @@
+{
+  "name": "karatesyntax",
+  "displayName": "Karate Syntax",
+  "description": "Syntax highlighting for the Karate test framework",
+  "version": "0.0.1",
+  "publisher": "pxius",
+  "engines": {
+    "vscode": "^1.15.0"
+  },
+  "keywords": [
+    "karate",
+    "gherkin",
+    "feature",
+    "syntax",
+    "cucumber"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Formatters"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pXius/karatesyntax.git"
+  },
+  "icon": "images/logo.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "feature",
+        "aliases": [
+          "feature"
+        ],
+        "extensions": [
+          ".feature"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "feature",
+        "scopeName": "source.feature",
+        "path": "./syntax/feature.tmLanguage.json"
+      }
+    ]
+  }
+}

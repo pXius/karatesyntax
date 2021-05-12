@@ -1,0 +1,174 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "feature",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#prints"
+    },
+    {
+      "include": "#read"
+    },
+    {
+      "include": "#passIn"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "string.quoted",
+          "begin": "(Examples|Scenarios)",
+          "end": "^\\s*\\n\\s*$",
+          "beginCaptures": {
+            "0": {
+              "name": "entity.name.type.class.js"
+            }
+          },
+          "patterns": [
+            {
+              "name": "variable.language",
+              "begin": "(:)([^\\n]*)?\\n",
+              "end": "\\n",
+              "beginCaptures": {
+                "0": {
+                  "name": "variable.language"
+                },
+                "1": {
+                  "name": "support.function.git-rebase"
+                },
+                "2": {
+                  "name": "support.function.git-rebase"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "entity.name.type.class.js",
+          "match": "(Scenario\\:|Scenario Outline\\:|Feature\\:|Background\\:|Rule\\:)"
+        },
+        {
+          "name": "punctuation.accessor",
+          "match": "(Given |When |Then |And |But |\\*|\\{|\\}|if )"
+        },
+        {
+          "name": "support.function",
+          "match": "(print |call |def |set |replace |get |remove |configure |callonce |eval |karate|\\.call)"
+        },
+        {
+          "name": "constant",
+          "match": "(true|false|null)"
+        },
+        {
+          "name": "keyword.control.flow.js",
+          "match": "(@[a-zA-Z0-9_-]+|=|!=|\\+|- |&&|\\|\\|)"
+        },
+        {
+          "name": "keyword.operator.feature",
+          "match": "\\|"
+        },
+        {
+          "name": "variable.language",
+          "match": "<[^>]*>"
+        },
+        {
+          "name": "variable.language",
+          "match": "(match |assert |contains |contains\\ only|contains\\ any|contains\\ deep|!contains|\\ each)"
+        },
+        {
+          "name": "variable.language",
+          "match": "(param |header |cookie |form\\ field|multipart\\ file|multipart\\ field|multipart\\ entity|params|headers|cookies|form\\ fields|multipart\\ files|multipart\\ fields)"
+        },
+        {
+          "name": "variable.language",
+          "match": "(url |path |request |method |status |soap\\ action|retry\\ until)"
+        },
+        {
+          "name": "keyword.control.flow.js",
+          "match": "(response |responseBytes|responseStatus|responseHeaders|responseCookies|responseType|responseTimeStamp)"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.feature",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.feature",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "prints": {
+      "name": "string.quoted.double.feature",
+      "begin": "'",
+      "end": "'(?![a-zA-Z])",
+      "patterns": [
+        {
+          "name": "constant.character.escape.feature",
+          "match": "\\\\."
+        },
+        {
+          "name": "variable.language",
+          "match": "\\<[a-z.0-9,A-Z*_/~-]*\\>|\\\\|\\\\0\\d\\d|\\\\\\w"
+        },
+        {
+          "name": "keyword.control.flow.js",
+          "match": "\\@[a-z][a-z.0-9A-Z_]*|\\@\\([a-z.0-9,A-Z-]*\\)(\\([.0-9-]+\\))?"
+        },
+        {
+          "include": "#passIn"
+        }
+      ]
+    },
+    "comments": {
+      "name": "comment",
+      "patterns": [
+        {
+          "name": "comment",
+          "match": "^\\s*#.*"
+        }
+      ]
+    },
+    "read": {
+      "begin": "read\\(",
+      "end": "\\)(?!\\))",
+      "captures": {
+        "0": {
+          "name": "punctuation.accessor"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#prints"
+        }
+      ]
+    },
+    "passIn": {
+      "begin": "\\#\\(",
+      "end": "\\)(?!\\))",
+      "captures": {
+        "0": {
+          "name": "punctuation.accessor"
+        }
+      },
+      "patterns": [
+        {
+          "name": "punctuation.accessor",
+          "match": "\\(|\\)|[a-z.0-9,A-Z-_]*"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.feature"
+}
