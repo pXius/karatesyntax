@@ -5,3 +5,6 @@
 
 ### 0.0.2
 - Minor colour updates
+
+### 0.0.3
+- Readme updates

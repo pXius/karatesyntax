@@ -4,10 +4,13 @@
 
 This extension adds proper syntax highlighting to files written using the Karate Test framework. More specifically, it applies highlights to `.feature` files.
 
-## Recommended
-This extension will work just fine on it's own, however it's best used with the [Carbon Owl](https://marketplace.visualstudio.com/items?itemName=pxius.carbon-owl) theme.
+## Recommended❗️
 
-For an even better experience, install the [Cucumber Full Support](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete), and enjoy perfectly formatted `.feature` files.
+- For the best experience, install the *[Karate Extension Pack](https://marketplace.visualstudio.com/items?itemName=pxius.karate-extension-pack)* which includes this plugin.
+
+Alternatively you can install a theme of your own or use the [Carbon Owl](https://marketplace.visualstudio.com/items?itemName=pxius.carbon-owl) theme (pictured below and part of extension pack).
+
+To enjoy perfectly formatted `.feature` files, install [Cucumber Full Support](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete) (also part of extension pack).
 
 
 
