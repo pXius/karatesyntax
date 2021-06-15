@@ -62,7 +62,7 @@
         },
         {
           "name": "support.function",
-          "match": "(print |call |def |set |replace |get |remove |configure |callonce |eval |karate|\\.call)"
+          "match": "( print | call | def | set | replace | get | remove | configure | callonce | eval | karate|\\.call|\\.set|\\.get)"
         },
         {
           "name": "constant",
