@@ -8,3 +8,6 @@
 
 ### 0.0.3
 - Readme updates
+
+### 0.0.4
+- Highlight Fixes
